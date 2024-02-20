@@ -51,17 +51,25 @@
   ],
   "normalizer": null,
   "pre_tokenizer": {
-    "type": "ByteLevel",
-    "add_prefix_space": false,
-    "trim_offsets": true,
-    "use_regex": true
+    "type": "Sequence",
+    "pretokenizers": [
+      {
+        "type": "Split",
+        "pattern": {
+          "Regex": "(?i:'s|'t|'re|'ve|'m|'ll|'d)|[^\\r\\n\\p{L}\\p{N}]?\\p{L}+|\\p{N}{1,3}| ?[^\\s\\p{L}\\p{N}]+[\\r\\n]*|\\s*[\\r\\n]+|\\s+(?!\\S)|\\s+"
+        },
+        "behavior": "Removed",
+        "invert": true
+      },
+      {
+        "type": "ByteLevel",
+        "add_prefix_space": false,
+        "trim_offsets": true,
+        "use_regex": false
+      }
+    ]
   },
-  "post_processor": {
-    "type": "ByteLevel",
-    "add_prefix_space": true,
-    "trim_offsets": false,
-    "use_regex": true
-  },
+  "post_processor": null,
   "decoder": {
     "type": "ByteLevel",
     "add_prefix_space": true,
