@@ -1,7 +1,7 @@
 {
   "add_prefix_space": false,
   "bos_token": "<|endoftext|>",
-  "clean_up_tokenization_spaces": true,
+  "clean_up_tokenization_spaces": false,
   "eos_token": "<|endoftext|>",
   "model_max_length": 4096,
   "tokenizer_class": "GPT3_5Tokenizer",
