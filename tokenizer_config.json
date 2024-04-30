@@ -4,6 +4,6 @@
   "clean_up_tokenization_spaces": false,
   "eos_token": "<|endoftext|>",
   "model_max_length": 4096,
-  "tokenizer_class": "GPT3_5Tokenizer",
+  "tokenizer_class": "GPT2TokenizerFast",
   "unk_token": "<|endoftext|>"
 }
